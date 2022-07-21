@@ -12,8 +12,8 @@ const Language = () => {
       {
         < img
           src={"svg/" + flag}
-          width={50}
-          height={50}
+          width={20}
+          height={20}
           alt="imagen language"
           onClick={handleLanguage} />
       }

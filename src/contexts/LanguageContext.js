@@ -43,8 +43,14 @@ const LanguageProvider = ({ children }) => {
   const [listLanguage, setListLanguage] = useState(initialListLanguage);
 
   const handleLanguage = () => {
-    if (language === "en") setLanguage("es");
-    else setLanguage("en");
+    if (language === "en") {
+      setLanguage("es");
+      setTexts(translations["es"]);
+    }
+    else {
+      setLanguage("en");
+      setTexts(translations["en"]);
+    }
   };
 
   const data = { language, handleLanguage, listLanguage, texts };
