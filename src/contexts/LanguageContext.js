@@ -10,30 +10,24 @@ const initialListLanguage = [
 const translations = {
   es: {
     header_button_search: "Buscar",
+    shopping_cart_title: "Carrito de compras",
+    shopping_cart_table_title_image: "Imagen",
+    shopping_cart_table_title_product: "Producto",
+    shopping_cart_table_title_quantityp: "Cantidad",
+    shopping_cart_table_title_total: "Total",
+
     titleProducts: "Productos",
-    headerSubtitle: "Mi cabecera",
-    headerLight: "Claro",
-    headerDark: "Oscuro",
-    buttonLogin: "Iniciar Sesión",
-    buttonLogout: "Cerrar Sesión",
-    mainWelcome: "Bienvenid@ invitad@",
-    mainHello: "Hola Usuari@",
-    mainContent: "Mi contenido principal",
-    footerTitle: "Mi pié de página",
   },
   en: {
     header_button_search: "Search",
-    titleProducts: "Products",
+    shopping_cart_title: "Shopping cart",
+    shopping_cart_table_title_image: "Image",
+    shopping_cart_table_title_product: "Product",
+    shopping_cart_table_title_quantityp: "Quantity",
+    shopping_cart_table_title_total: "Total",
 
-    headerSubtitle: "My header",
-    headerLight: "Light",
-    headerDark: "Dark",
-    buttonLogin: "Login",
-    buttonLogout: "Logout",
-    mainWelcome: "Welcome Guest",
-    mainHello: "Hello User",
-    mainContent: "My main content",
-    footerTitle: "My footer",
+
+    titleProducts: "Products",
   },
 };
 

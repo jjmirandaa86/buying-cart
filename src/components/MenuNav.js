@@ -15,10 +15,13 @@ function OffcanvasExample() {
 
   return (
     <>
-      <Navbar key={expand} bg={theme} expand={expand} className="mb-3">
+      <Navbar key={expand} bg={theme} text="dark" expand={expand} className="mb-3">
         <Container fluid>
           <Navbar.Brand href="#">
             <Logo />
+            <span className="justify-content-center">
+              carrito
+            </span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas

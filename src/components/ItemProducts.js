@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Card, Button, Container } from 'react-bootstrap';
+import ThemeContext from "../contexts/ThemeContext";
 
 const ItemProducts = ({ product, handleAddProduct }) => {
 
-  const { id, name, price } = product;
+  const { id, name, price, url, brand } = product;
 
-  console.log(id, name, price);
+  const { theme } = useContext(ThemeContext);
+
+  const bgCard = `bg- ${theme}`;
+
+  //"bg-" + theme + " text-" + theme === "light" ? "dark" : "white";
 
   return (
-    <div className="box-itemProduct">
-      <>{id} </>
-      <>{name} </>
-      <>{price} </>
-      <button onClick={handleAddProduct}>+</button>
-    </div>
+    <>
+      <Card style={{ width: '11rem' }}>
+        <Card.Img variant="top" src={url} />
+        <Card.Body>
+          <Card.Title>{name} {" "} ${price} </Card.Title>
+          <Card.Text>
+            {brand} {" - "} {name}
+          </Card.Text>
+          <Button variant="primary">+</Button>
+        </Card.Body>
+      </Card>
+    </>
   );
 };
 

@@ -6,13 +6,7 @@ const LoadingProvider = ({ children }) => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChangeLoading = () => {
-    loading
-      ? setLoading(false)
-      : setLoading(true);
-  };
-
-  const data = { loading, handleChangeLoading };
+  const data = { loading, setLoading };
 
   return (
     <LoadingContext.Provider value={data}>
