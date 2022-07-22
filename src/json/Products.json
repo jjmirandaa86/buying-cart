@@ -1,0 +1,9 @@
+{
+   "products": [
+    { "id": 1, "name": "Pepsi 500", "price": 0.5, "brand": "Pepsi" },
+      { "id": 2, "name": "Seven 1200", "price": 2, "brand": "Seven" },
+      { "id": 3, "name": "Gatorade 1000", "price": 0.75, "brand": "Gatorade" },
+      { "id": 4, "name": "Mas Fresa 3000", "price": 2.5, "brand": "Mas" },
+      { "id": 5, "name": "V220 365", "price": 1, "brand": "V220" }
+  ]
+}

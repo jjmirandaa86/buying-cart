@@ -1,0 +1,8 @@
+{
+   "expenses":[
+    { "id": 1, "user": 1, "date": "2022-07-21", "hour": "", "total": 3}
+  ],
+  "detExpenses": [
+    { "id": 1, "product": 1, "quantity": 3, "price": 1, "sub-total": 3}
+  ]
+}

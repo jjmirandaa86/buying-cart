@@ -1,7 +1,5 @@
 import React from 'react';
-import Logo from "./Logo";
-import Theme from "./Theme";
-import Language from "./Language";
+import MenuNav from "./MenuNav";
 
 const Header = () => {
   const menu = [
@@ -10,9 +8,7 @@ const Header = () => {
 
   return (
     <>
-      <Logo />
-      <Theme />
-      <Language />
+      <MenuNav />
     </>
   );
 };

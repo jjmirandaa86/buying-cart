@@ -9,8 +9,8 @@ const initialListLanguage = [
 
 const translations = {
   es: {
+    header_button_search: "Buscar",
     titleProducts: "Productos",
-
     headerSubtitle: "Mi cabecera",
     headerLight: "Claro",
     headerDark: "Oscuro",
@@ -22,6 +22,7 @@ const translations = {
     footerTitle: "Mi pié de página",
   },
   en: {
+    header_button_search: "Search",
     titleProducts: "Products",
 
     headerSubtitle: "My header",

@@ -1,14 +1,18 @@
 import React from 'react';
 
-const ItemProducts = ({ data, handleAdd }) => {
-  const { id, name, price } = data;
+const ItemProducts = ({ product, handleAddProduct }) => {
+
+  const { id, name, price } = product;
+
+  console.log(id, name, price);
+
   return (
-    <>
-      <div>{id} </div>
-      <div>{name} </div>
-      <div>{price} </div>
-      <button onClick={handleAdd} >+</button>
-    </>
+    <div className="box-itemProduct">
+      <>{id} </>
+      <>{name} </>
+      <>{price} </>
+      <button onClick={handleAddProduct}>+</button>
+    </div>
   );
 };
 
