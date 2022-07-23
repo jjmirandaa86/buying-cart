@@ -16,19 +16,16 @@ const Products = () => {
   useEffect(() => {
     setLoading(true);
 
-    setTimeout(() => {
-      api.get(URLS.products)
-        .then((res) => {
-          if (!res.err) {
-            setProduct(res);
-            //setError(null);
-          } else {
-            setProduct(null);
-            //setError(res);
-          }
-        });
-
-    }, "3000");
+    api.get(URLS.products)
+      .then((res) => {
+        if (!res.err) {
+          setProduct(res);
+          //setError(null);
+        } else {
+          setProduct(null);
+          //setError(res);
+        }
+      });
 
     setLoading(false);
 

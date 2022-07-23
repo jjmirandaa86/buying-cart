@@ -11,9 +11,10 @@ const translations = {
   es: {
     header_button_search: "Buscar",
     shopping_cart_title: "Carrito de compras",
-    shopping_cart_table_title_image: "Imagen",
     shopping_cart_table_title_product: "Producto",
-    shopping_cart_table_title_quantityp: "Cantidad",
+    shopping_cart_table_title_quantity: "Cantidad",
+    shopping_cart_table_title_price: "Precio",
+    shopping_cart_table_title_sTotal: "Sub-Total",
     shopping_cart_table_title_total: "Total",
 
     titleProducts: "Productos",
@@ -21,9 +22,10 @@ const translations = {
   en: {
     header_button_search: "Search",
     shopping_cart_title: "Shopping cart",
-    shopping_cart_table_title_image: "Image",
     shopping_cart_table_title_product: "Product",
-    shopping_cart_table_title_quantityp: "Quantity",
+    shopping_cart_table_title_quantity: "Quantity",
+    shopping_cart_table_title_price: "Price",
+    shopping_cart_table_title_sTotal: "Sub-Total",
     shopping_cart_table_title_total: "Total",
 
 
