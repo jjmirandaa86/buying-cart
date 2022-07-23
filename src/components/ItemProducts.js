@@ -8,7 +8,9 @@ const ItemProducts = ({ product, handleAddProduct }) => {
   const { id, name, price, url, brand } = product;
 
   const { theme } = useContext(ThemeContext);
-  const { addProductToCart } = useContext(ShoppingCartContext);
+  const {
+    shoppingCart,
+    addOneProductToCart } = useContext(ShoppingCartContext);
 
   const bgCard = `bg- ${theme}`;
 
@@ -23,7 +25,7 @@ const ItemProducts = ({ product, handleAddProduct }) => {
           <Card.Text>
             {brand} {" - "} {name}
           </Card.Text>
-          <Button onClick={(() => addProductToCart(product))} variant="primary">+</Button>
+          <Button onClick={(() => addOneProductToCart(product))} variant="primary">+</Button>
         </Card.Body>
       </Card>
     </>

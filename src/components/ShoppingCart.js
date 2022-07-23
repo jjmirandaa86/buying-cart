@@ -22,6 +22,7 @@ const ShoppingCart = () => {
             <th>{texts.shopping_cart_table_title_quantity} </th>
             <th>{texts.shopping_cart_table_title_price} </th>
             <th>{texts.shopping_cart_table_title_sTotal} </th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

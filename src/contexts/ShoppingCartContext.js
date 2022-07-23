@@ -10,25 +10,41 @@ const ShoppingCartProvider = ({ children }) => {
 
 
   //add products to shoppingCart
-  const addProductToCart = (data) => {
+  const addOneProductToCart = (data) => {
     const { id, name, price } = data;
-    const existProduct = () => {
-      shoppingCart.find((el) => el.id === id);
-    };
 
-    //if Object.keys()
+    const existProduct = shoppingCart.find((el) => el.id === id);
 
-    setShoppingCart([
-      ...shoppingCart,
-      { id: id, name: name, price: price, quantity: 1 }
-    ]
-    );
+    const productAddOne = shoppingCart.find((el) => {
+      if (el.id === id) {
+        el.quantity = el.quantity + 1;
+        return el;
+      }
+    });
 
-    console.log(shoppingCart);
+    console.log("existe");
+    console.log(existProduct);
+
+    console.log("agrega 1");
+    console.log(productAddOne);
+
+    if (existProduct) {
+      setShoppingCart([...shoppingCart, productAddOne]);
+    } else {
+      setShoppingCart([...shoppingCart, { id: id, name: name, price: price, quantity: 1 }]);
+    }
   };
 
+  const handleDeleteProductToCart = () => { };
 
-  const data = { shoppingCart, setShoppingCart, addProductToCart };
+  const removeOneProductToCart = () => { };
+
+  const data = {
+    shoppingCart,
+    addOneProductToCart,
+    handleDeleteProductToCart,
+    removeOneProductToCart
+  };
 
   return (
     <ShoppingCartContext.Provider value={data}>

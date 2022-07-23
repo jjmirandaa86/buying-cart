@@ -10,6 +10,7 @@ const initialListLanguage = [
 const translations = {
   es: {
     header_button_search: "Buscar",
+    header_button_cart: "Carrito",
     shopping_cart_title: "Carrito de compras",
     shopping_cart_table_title_product: "Producto",
     shopping_cart_table_title_quantity: "Cantidad",
@@ -21,6 +22,7 @@ const translations = {
   },
   en: {
     header_button_search: "Search",
+    header_button_cart: "Cart",
     shopping_cart_title: "Shopping cart",
     shopping_cart_table_title_product: "Product",
     shopping_cart_table_title_quantity: "Quantity",

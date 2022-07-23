@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 import ThemeContext from "../contexts/ThemeContext";
+import { ProductProvider } from "../contexts/ProductContext";
+import { ShoppingCartProvider } from "../contexts/ShoppingCartContext";
+
 import Body from "./Body";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -21,8 +24,12 @@ const Main = () => {
 
   return (
     <div className={"app-" + theme}>
-      <Header />
-      <Body />
+      <ProductProvider>
+        <ShoppingCartProvider>
+          <Header />
+          <Body />
+        </ShoppingCartProvider>
+      </ProductProvider>
       <Footer />
     </div>
   );
