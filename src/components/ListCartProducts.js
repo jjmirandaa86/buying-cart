@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { Button, Stack } from "react-bootstrap";
 import React, { useContext } from 'react';
 import ShoppingCartContext from "../contexts/ShoppingCartContext";
 
@@ -25,22 +25,24 @@ const ListCartProducts = () => {
                   <td>$ {price} </td>
                   <td>$ {parseFloat(price) * parseFloat(quantity)} </td>
                   <td>
-                    {quantity > 1
-                      ? <>
-                        <Button
-                          onClick={(() => addOneProductToCart(el))}
-                          variant="secondary" >+</Button>
-                        <Button
-                          onClick={(() => removeOneProductToCart(el))}
-                          variant="secondary"
-                        >-</Button>
-                      </>
-                      : ""
-                    }
-                    <Button
-                      onClick={(() => handleDeleteProductToCart(el))}
-                      variant="danger"
-                    >X</Button>
+                    <Stack gap={1} direction="horizontal">
+                      <Button
+                        onClick={(() => handleDeleteProductToCart(el))}
+                        variant="outline-danger"
+                      >X</Button>
+                      {quantity > 1
+                        ? <>
+                          <Button
+                            onClick={(() => addOneProductToCart(el))}
+                            variant="secondary" >+</Button>
+                          <Button
+                            onClick={(() => removeOneProductToCart(el))}
+                            variant="outline-secondary"
+                          >-</Button>
+                        </>
+                        : ""
+                      }
+                    </Stack>
                   </td>
                 </tr>
               </>

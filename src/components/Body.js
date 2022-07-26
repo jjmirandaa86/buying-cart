@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Container } from 'react-bootstrap';
 import LanguageContext from "../contexts/LanguageContext";
 import LoadingContext from "../contexts/LodingContexts";
 import Loading from "./Loading";
@@ -14,10 +15,14 @@ const Body = () => {
       {loading && <Loading />}
       {!loading &&
         <>
-          {texts.shopping_cart_title}
-          <ShoppingCart />
-          {texts.titleProducts}
-          <Products />
+          <Container>
+            {texts.shopping_cart_title}
+            <ShoppingCart />
+          </Container>
+          <Container>
+            {texts.titleProducts}
+            <Products />
+          </Container>
         </>
       }
     </div>

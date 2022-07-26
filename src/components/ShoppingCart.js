@@ -2,19 +2,21 @@ import React, { useContext } from 'react';
 import { Table } from 'react-bootstrap';
 import LanguageContext from "../contexts/LanguageContext";
 import ShoppingCartContext from "../contexts/ShoppingCartContext";
+import ThemeContext from "../contexts/ThemeContext";
 import ListCartProducts from "./ListCartProducts";
 
 const ShoppingCart = () => {
 
   const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
   const { texts } = useContext(LanguageContext);
+  const { theme } = useContext(ThemeContext);
 
   const totalExpense = shoppingCart.map(el =>
     parseFloat(el.price) * parseFloat(el.quantity));
 
   return (
     <>
-      <Table striped bordered hover>
+      <Table responsive="xs" variant={theme} striped bordered hover>
         <thead>
           <tr>
             <th>#</th>

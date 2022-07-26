@@ -18,7 +18,10 @@ const ItemProducts = ({ product, handleAddProduct }) => {
 
   return (
     <>
-      <Card style={{ width: '11rem' }}>
+      <Card style={{ width: '11rem' }}
+        bg={theme.toLowerCase()}
+        key={theme}
+        text={theme.toLowerCase() === 'light' ? 'dark' : 'white'}>
         <Card.Img variant="top" src={url} />
         <Card.Body>
           <Card.Title>{name} {" "} ${price} </Card.Title>
