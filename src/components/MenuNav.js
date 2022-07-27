@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Container, Offcanvas, NavDropdown, Form, Navbar, Nav, Row, Col, Button, Badge } from 'react-bootstrap';
 import LanguageContext from "../contexts/LanguageContext";
+import OptionBodyContext from "../contexts/OptionBodyContext";
 import ShoppingCartContext from "../contexts/ShoppingCartContext";
 import ThemeContext from "../contexts/ThemeContext";
 import Language from "./Language";
@@ -12,6 +13,7 @@ function OffcanvasExample() {
   const { texts } = useContext(LanguageContext);
   const { theme } = useContext(ThemeContext);
   const { shoppingCart } = useContext(ShoppingCartContext);
+  const { optionBody, setOptionBody } = useContext(OptionBodyContext);
 
   const expand = "md";
 
@@ -22,9 +24,15 @@ function OffcanvasExample() {
           <Navbar.Brand href="#">
             <Logo />
             <span className="justify-content-center">
-              <Button variant="primary">
-                {texts.header_button_cart} <Badge pill bg="secondary">{shoppingCart.length}</Badge>
-              </Button>
+              {optionBody === "P"
+                ? <Button variant="primary" onClick={() => setOptionBody("C")}>
+                  {texts.header_button_cart} <Badge pill bg="secondary">{shoppingCart.length}</Badge>
+                </Button>
+                : <Button variant="primary" onClick={() => setOptionBody("P")}>
+                  {texts.header_button_products}
+                </Button>
+              }
+
             </span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

@@ -11,33 +11,47 @@ const ShoppingCartProvider = ({ children }) => {
 
   //add products to shoppingCart
   const addOneProductToCart = (data) => {
-    const { id, name, price } = data;
-
+    const { id } = data;
     const existProduct = shoppingCart.find((el) => el.id === id);
 
-    const productAddOne = shoppingCart.find((el) => {
-      if (el.id === id) {
-        el.quantity = el.quantity + 1;
-        return el;
-      }
-    });
+    if (existProduct) {
+      const productsFilter = shoppingCart.filter((el) => {
+        if (el.id !== id)
+          return el;
+      });
+      productsFilter.push({ ...existProduct, quantity: existProduct.quantity + 1 });
+      setShoppingCart(productsFilter);
+    } else
+      setShoppingCart([...shoppingCart, { ...data, quantity: 1 }]);
+  };
 
-    console.log("existe");
-    console.log(existProduct);
-
-    console.log("agrega 1");
-    console.log(productAddOne);
+  const removeOneProductToCart = (data) => {
+    const { id } = data;
+    const existProduct = shoppingCart.find((el) => el.id === id);
 
     if (existProduct) {
-      setShoppingCart([...shoppingCart, productAddOne]);
-    } else {
-      setShoppingCart([...shoppingCart, { id: id, name: name, price: price, quantity: 1 }]);
+      const productsFilter = shoppingCart.filter((el) => {
+        if (el.id !== id)
+          return el;
+      });
+
+      if (parseInt(existProduct.quantity) > 1) {
+        productsFilter.push({ ...existProduct, quantity: existProduct.quantity - 1 });
+      }
+      setShoppingCart(productsFilter);
     }
   };
 
-  const handleDeleteProductToCart = () => { };
+  const handleDeleteProductToCart = (data) => {
+    const { id } = data;
 
-  const removeOneProductToCart = () => { };
+    setShoppingCart(
+      shoppingCart.filter((el) => {
+        if (el.id !== id)
+          return el;
+      })
+    );
+  };
 
   const data = {
     shoppingCart,

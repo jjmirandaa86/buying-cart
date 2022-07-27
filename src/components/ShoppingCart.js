@@ -7,7 +7,11 @@ import ListCartProducts from "./ListCartProducts";
 
 const ShoppingCart = () => {
 
-  const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
+  const { shoppingCart,
+    handleDeleteProductToCart,
+    addOneProductToCart,
+    removeOneProductToCart } = useContext(ShoppingCartContext);
+
   const { texts } = useContext(LanguageContext);
   const { theme } = useContext(ThemeContext);
 
@@ -28,7 +32,22 @@ const ShoppingCart = () => {
           </tr>
         </thead>
         <tbody>
-          <ListCartProducts />
+          {
+            shoppingCart.length > 0 &&
+            <>
+              {
+                shoppingCart.map((el, index) =>
+                  <ListCartProducts
+                    key={index}
+                    data={el}
+                    handleDeleteProductToCart={handleDeleteProductToCart}
+                    addOneProductToCart={addOneProductToCart}
+                    removeOneProductToCart={removeOneProductToCart}
+                  />
+                )
+              }
+            </>
+          }
         </tbody>
       </Table>
       <div>

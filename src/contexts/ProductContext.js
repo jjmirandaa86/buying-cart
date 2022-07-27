@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 
 const ProductContext = createContext();
 
-const initialStateProduct = {};
+const initialStateProduct = [];
 
 const ProductProvider = ({ children }) => {
 

@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import ThemeContext from "../contexts/ThemeContext";
 import { ProductProvider } from "../contexts/ProductContext";
 import { ShoppingCartProvider } from "../contexts/ShoppingCartContext";
+import { OptionBodyProvider } from "../contexts/OptionBodyContext";
 import Body from "./Body";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -16,10 +17,12 @@ const Main = () => {
     <div className={`bg-${theme} text-${theme === "light" ? "white" : "dark"}`} >
       <ProductProvider>
         <ShoppingCartProvider>
-          <Header />
-          <Container>
-            <Body />
-          </Container >
+          <OptionBodyProvider>
+            <Header />
+            <Container>
+              <Body />
+            </Container >
+          </OptionBodyProvider>
         </ShoppingCartProvider>
       </ProductProvider>
       <Footer />
