@@ -4,6 +4,7 @@
       { "id": 2, "name": "Seven 1200", "price": 2, "brand": "Seven", "url": "https://laespanola.com.ec/images/thumbs/0003494_cola-seven-up-3-lt_500.jpeg" },
       { "id": 3, "name": "Gatorade 1000", "price": 0.75, "brand": "Gatorade", "url": "https://m.media-amazon.com/images/I/71hmnkwthJL._SL1500_.jpg" },
       { "id": 4, "name": "Mas Fresa 3000", "price": 2.5, "brand": "Mas", "url": "https://www.infocorporativo.tia.com.ec/sites/almacenestia.com/files/productos/imagenescargadas/2014-04-02/247050000.jpg"},
-      { "id": 5, "name": "V220 365", "price": 1, "brand": "V220", "url": "https://www.farmaciasmedicity.com/4713-large_default/220-v-energizante-original-frasco-con-600-ml.jpg"}
+      { "id": 5, "name": "V220 365", "price": 1, "brand": "V220", "url": "https://www.farmaciasmedicity.com/4713-large_default/220-v-energizante-original-frasco-con-600-ml.jpg"},
+      { "id": 6, "name": "V220 500", "price": 2, "brand": "V220", "url": "https://www.farmaciasmedicity.com/4713-large_default/220-v-energizante-original-frasco-con-600-ml.jpg"}
   ]
 }

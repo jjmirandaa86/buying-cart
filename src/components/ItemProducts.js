@@ -1,16 +1,14 @@
 import React, { useContext } from 'react';
-import { Card, Button, Container } from 'react-bootstrap';
+import { Card, Button, Container, Form, Col, Row, InputGroup } from 'react-bootstrap';
 import ShoppingCartContext from "../contexts/ShoppingCartContext";
 import ThemeContext from "../contexts/ThemeContext";
 
-const ItemProducts = ({ product, handleAddProduct }) => {
+const ItemProducts = ({ product }) => {
 
   const { id, name, price, url, brand } = product;
 
   const { theme } = useContext(ThemeContext);
-  const {
-    shoppingCart,
-    addOneProductToCart } = useContext(ShoppingCartContext);
+  const { addOneProductToCart } = useContext(ShoppingCartContext);
 
   const bgCard = `bg- ${theme}`;
 
@@ -18,17 +16,28 @@ const ItemProducts = ({ product, handleAddProduct }) => {
 
   return (
     <>
-      <Card style={{ width: '11rem' }}
+      <Card
+        className="text-center"
+        style={{ width: '20%' }}
         bg={theme.toLowerCase()}
         key={theme}
         text={theme.toLowerCase() === 'light' ? 'dark' : 'white'}>
         <Card.Img variant="top" src={url} />
         <Card.Body>
-          <Card.Title>{name} {" "} ${price} </Card.Title>
+          <Card.Title>{name}</Card.Title>
           <Card.Text>
-            {brand} {" - "} {name}
+            {brand}
           </Card.Text>
-          <Button onClick={(() => addOneProductToCart(product))} variant="primary">+</Button>
+          <InputGroup className="mb-4">
+            <Button variant="outline-secondary"
+              onClick={() => addOneProductToCart(product)}>-</Button>
+            <Form.Control aria-label=""
+              placeholder="0" />
+            <Button variant="outline-secondary"
+              onClick={() => addOneProductToCart(product)}>+</Button>
+            <Button variant="outline-secondary"
+              onClick={() => addOneProductToCart(product)}>Agregar</Button>
+          </InputGroup>
         </Card.Body>
       </Card>
     </>

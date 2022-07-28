@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Badge } from 'react-bootstrap';
+import { FilterProductProvider } from "../contexts/FilterProductContext";
 import LanguageContext from "../contexts/LanguageContext";
 import LoadingContext from "../contexts/LodingContexts";
 import OptionBodyContext from "../contexts/OptionBodyContext";
 import Loading from "./Loading";
 import Products from "./Products";
+import Publicity from "./Publicity";
 import ShoppingCart from "./ShoppingCart";
 
 const Body = () => {
@@ -17,15 +19,22 @@ const Body = () => {
       {loading && <Loading />}
       {!loading &&
         <>
+          <Publicity />
           {optionBody === "P" &&
-            <>
-              {texts.titleProducts}
-              < Products />
-            </>
+            <Container>
+              <h3>
+                <Badge bg="secondary">{texts.titleProducts}</Badge>
+              </h3>
+              <FilterProductProvider>
+                <Products />
+              </FilterProductProvider>
+            </Container>
           }
           {optionBody === "C" &&
             <>
-              {texts.shopping_cart_title}
+              <h3>
+                <Badge bg="secondary">{texts.shopping_cart_title}</Badge>
+              </h3>
               <ShoppingCart />
             </>
           }
@@ -35,4 +44,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default Body;;
