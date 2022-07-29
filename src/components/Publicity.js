@@ -4,10 +4,9 @@ const Publicity = () => {
   return (
     <>
       <Carousel>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={5000}>
           <img
-            className="d-block"
-            width={"70%"}
+            className="d-block w-100"
             src="https://placeimg.com/800/200/animals"
             alt="First slide"
           />
@@ -16,9 +15,9 @@ const Publicity = () => {
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={5000}>
           <img
-            className="d-block w-700"
+            className="d-block w-100"
             src="https://placeimg.com/800/200/animals"
             alt="First slide"
           />
@@ -27,9 +26,9 @@ const Publicity = () => {
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={5000}>
           <img
-            className="d-block w-700"
+            className="d-block w-100"
             src="https://placeimg.com/800/200/animals"
             alt="First slide"
           />

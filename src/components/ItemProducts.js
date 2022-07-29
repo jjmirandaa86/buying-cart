@@ -18,7 +18,7 @@ const ItemProducts = ({ product }) => {
     <>
       <Card
         className="text-center"
-        style={{ width: '20%' }}
+        style={{ width: '16rem' }}
         bg={theme.toLowerCase()}
         key={theme}
         text={theme.toLowerCase() === 'light' ? 'dark' : 'white'}>
