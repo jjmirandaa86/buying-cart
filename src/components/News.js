@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap";
 
-const Publicity = () => {
+const News = () => {
   return (
     <>
       <Carousel>
@@ -42,4 +42,4 @@ const Publicity = () => {
   );
 };
 
-export default Publicity;
+export default News;

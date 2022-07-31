@@ -6,7 +6,7 @@ import LoadingContext from "../contexts/LodingContexts";
 import OptionBodyContext from "../contexts/OptionBodyContext";
 import Loading from "./Loading";
 import Products from "./Products";
-import Publicity from "./Publicity";
+import News from "./News";
 import ShoppingCart from "./ShoppingCart";
 
 const Body = () => {
@@ -19,7 +19,7 @@ const Body = () => {
       {loading && <Loading />}
       {!loading &&
         <>
-          <Publicity />
+          <News />
           {optionBody === "P" &&
             <Container>
               <h3>

@@ -9,7 +9,18 @@ const initialListLanguage = [
 
 const translations = {
   es: {
+    header_label_news: "Novedades",
+    header_label_offers: "Ofertas",
+    header_label_combos: "Combos",
     header_button_search: "Buscar",
+    header_alt_logo: "Logo empresa",
+    header_alt_user: "Usuario",
+    header_alt_cart: "Carrito",
+    header_alt_language: "Lenguaje",
+    header_alt_theme: "Tema",
+
+
+
     header_button_cart: "Carrito",
     header_button_products: "Seguir comprando",
     shopping_cart_title: "Carrito de compras",
@@ -22,7 +33,18 @@ const translations = {
     titleProducts: "Productos",
   },
   en: {
+    header_label_news: "News",
+    header_label_offers: "Offers",
+    header_label_combos: "Combos",
     header_button_search: "Search",
+    header_alt_logo: "Brand Company",
+    header_alt_user: "User",
+    header_alt_cart: "Cart",
+    header_alt_language: "Lenguage",
+    header_alt_theme: "Theme",
+
+
+
     header_button_cart: "Cart",
     header_button_products: "Continue buying",
     shopping_cart_title: "Shopping cart",

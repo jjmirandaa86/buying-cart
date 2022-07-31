@@ -4,17 +4,18 @@ import LanguageContext from "../contexts/LanguageContext";
 const Language = () => {
 
   const { language, handleLanguage, listLanguage } = useContext(LanguageContext);
+  const { texts } = useContext(LanguageContext);
 
   const { id, name, flag } = listLanguage.find(e => e.id === language);
 
   return (
     <>
       {
-        < img
+        <img
           src={"svg/" + flag}
           width={20}
           height={20}
-          alt="imagen language"
+          alt={texts.header_alt_language}
           onClick={handleLanguage} />
       }
     </>

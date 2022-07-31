@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Main from "./components/Main";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { LoadingProvider } from "./contexts/LodingContexts";
+import RoutePage from "./routes/RoutePage";
 
 function App() {
 
@@ -12,7 +11,7 @@ function App() {
       <LoadingProvider>
         <ThemeProvider>
           <LanguageProvider>
-            <Main />
+            <RoutePage />
           </LanguageProvider>
         </ThemeProvider>
       </LoadingProvider>

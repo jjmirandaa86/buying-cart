@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+import { Link } from "react-router-dom";
 import { Container } from 'react-bootstrap';
 import ThemeContext from "../contexts/ThemeContext";
 import { ProductProvider } from "../contexts/ProductContext";
 import { ShoppingCartProvider } from "../contexts/ShoppingCartContext";
 import { OptionBodyProvider } from "../contexts/OptionBodyContext";
+
 import Body from "./Body";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -22,10 +24,10 @@ const Main = () => {
             <Container>
               <Body />
             </Container >
+            <Footer />
           </OptionBodyProvider>
         </ShoppingCartProvider>
       </ProductProvider>
-      <Footer />
     </div>
   );
 };
