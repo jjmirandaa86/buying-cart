@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { Container, Row, Col, Badge } from "react-bootstrap";
-import FilterProductContext from "../contexts/FilterProductContext";
-import ProductContext from "../contexts/ProductContext";
+import FilterProductContext from "../../contexts/FilterProductContext";
+import ProductContext from "../../contexts/ProductContext";
+import StyleContext from "../../contexts/StyleContext";
 
 const BrandProducts = () => {
 
   const { product } = useContext(ProductContext);
+  const { style } = useContext(StyleContext);
   const { configFilterProduct } = useContext(FilterProductContext);
 
   const filterField = "brand";
@@ -22,7 +24,7 @@ const BrandProducts = () => {
               <Col key={index}
                 xs
                 onClick={() => configFilterProduct(filterField, el)}>
-                <Badge bg="secondary">{el} </Badge></Col>)}
+                <Badge bg={style.colorFirst}>{el} </Badge></Col>)}
           </Row>
         </Container>
       }

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Table } from 'react-bootstrap';
-import LanguageContext from "../contexts/LanguageContext";
-import ShoppingCartContext from "../contexts/ShoppingCartContext";
-import ThemeContext from "../contexts/ThemeContext";
+import LanguageContext from "../../contexts/LanguageContext";
+import ShoppingCartContext from "../../contexts/ShoppingCartContext";
+import ThemeContext from "../../contexts/ThemeContext";
 import ListCartProducts from "./ListCartProducts";
 
 const ShoppingCart = () => {

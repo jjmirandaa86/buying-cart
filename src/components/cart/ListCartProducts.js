@@ -1,6 +1,6 @@
 import { Button, Stack } from "react-bootstrap";
 import React, { useContext } from 'react';
-import ShoppingCartContext from "../contexts/ShoppingCartContext";
+import ShoppingCartContext from "../../contexts/ShoppingCartContext";
 
 const ListCartProducts = ({ data,
   handleDeleteProductToCart,

@@ -1,30 +1,37 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Container, Offcanvas, NavDropdown, Form, Navbar, Nav, Row, Col, Button, Badge } from 'react-bootstrap';
-import LanguageContext from "../contexts/LanguageContext";
-import OptionBodyContext from "../contexts/OptionBodyContext";
-import ShoppingCartContext from "../contexts/ShoppingCartContext";
-import ThemeContext from "../contexts/ThemeContext";
-import Language from "./Language";
-import Logo from "./Logo";
+import LanguageContext from "../../contexts/LanguageContext";
+import ShoppingCartContext from "../../contexts/ShoppingCartContext";
+import ThemeContext from "../../contexts/ThemeContext";
+import StyleContext from "../../contexts/StyleContext";
+import Language from "../Language";
+import Logo from "../Logo";
 import UserHead from "./UserHead";
-import Theme from "./Theme";
+import Theme from "../Theme";
 import ShoppingCartHead from "./ShoppingCartHead";
 
-function OffcanvasExample() {
+function MenuNav() {
 
   const { texts } = useContext(LanguageContext);
   const { theme } = useContext(ThemeContext);
+  const { style } = useContext(StyleContext);
 
   const expand = "md";
 
   return (
     <>
-      <Navbar key={expand} bg={theme} text="dark" expand={expand} className="mb-3">
+      <Navbar key={expand}
+        bg={theme === "light" ? style.colorBacground : theme}
+        text={theme === "light" ? "white" : "dark"}
+        expand={expand}
+        className="mb-3">
         <Container fluid>
-          <Navbar.Brand href="/">
+          <Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Logo />
+            <Link to="/">
+              {" "} <Logo />
+            </Link>
           </Navbar.Brand>
           <div div className="justify-content-end">
             <Link to="/user"><UserHead /></Link>
@@ -37,14 +44,14 @@ function OffcanvasExample() {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Offcanvas
+                Menu
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/offers">{texts.header_label_offers} </Nav.Link>
-                <Nav.Link href="/news">{texts.header_label_news} </Nav.Link>
-                <Nav.Link href="/combos">{texts.header_label_combos} </Nav.Link>
+                <Nav.Link><Link to="/offers">{texts.header_label_offers}</Link></Nav.Link>
+                <Nav.Link><Link to="/news">{texts.header_label_news}</Link> </Nav.Link>
+                <Nav.Link><Link to="/combos">{texts.header_label_combos}</Link> </Nav.Link>
               </Nav>
               <Row>
                 <Col xs="auto"><Theme /></Col>
@@ -56,7 +63,7 @@ function OffcanvasExample() {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-warning">{texts.header_button_search} </Button>
+                  <Button variant={style.colorFirst}>{texts.header_button_search} </Button>
                 </Form></Col>
               </Row>
             </Offcanvas.Body>
@@ -67,4 +74,4 @@ function OffcanvasExample() {
   );
 }
 
-export default OffcanvasExample;
+export default MenuNav;

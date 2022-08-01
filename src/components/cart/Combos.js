@@ -8,7 +8,7 @@ const Combos = () => {
         <Carousel.Item interval={5000}>
           <img
             className="d-block w-100"
-            src="https://placeimg.com/800/200/animals"
+            src="https://placeimg.com/800/200/computers"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -19,7 +19,7 @@ const Combos = () => {
         <Carousel.Item interval={5000}>
           <img
             className="d-block w-100"
-            src="https://placeimg.com/800/200/animals"
+            src="https://placeimg.com/800/200/computers"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -30,7 +30,7 @@ const Combos = () => {
         <Carousel.Item interval={5000}>
           <img
             className="d-block w-100"
-            src="https://placeimg.com/800/200/animals"
+            src="https://placeimg.com/800/200/computers"
             alt="First slide"
           />
           <Carousel.Caption>

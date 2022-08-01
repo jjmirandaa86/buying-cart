@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { Form, Button, Card, Container, Stack } from "react-bootstrap";
-import LanguageContext from "../contexts/LanguageContext";
-import ThemeContext from "../contexts/ThemeContext";
+import LanguageContext from "../../contexts/LanguageContext";
+import ThemeContext from "../../contexts/ThemeContext";
 
 const Login = () => {
   const { texts } = useContext(LanguageContext);
@@ -50,6 +50,9 @@ const LoginForm = () => {
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
+        </Button>
+        <Button variant="primary" type="button" to="/">
+          Following to buy
         </Button>
       </Form>
       <Link to="/rememberuser" >If you dont know your password, remember it here.</Link>

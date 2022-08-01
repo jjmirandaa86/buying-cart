@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Alert } from "react-bootstrap";
-import LanguageContext from "../contexts/LanguageContext";
+import LanguageContext from "../../contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
 const Error = () => {

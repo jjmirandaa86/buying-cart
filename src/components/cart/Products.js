@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import ItemProducts from "./ItemProducts";
-import { URLS } from "../../src/api/Urls";
-import { helpHttp } from "../helpers/helpHttp";
-import LoadingContext from "../contexts/LodingContexts";
-import ProductContext from "../contexts/ProductContext";
+import { URLS } from "../../api/Urls";
+import { helpHttp } from "../../helpers/helpHttp";
+import LoadingContext from "../../contexts/LodingContexts";
+import ProductContext from "../../contexts/ProductContext";
 import BrandProducts from "./BrandProducts";
-import FilterProductContext from "../contexts/FilterProductContext";
+import FilterProductContext from "../../contexts/FilterProductContext";
 
 const Products = () => {
 
@@ -35,21 +35,23 @@ const Products = () => {
   }, []);
 
   const AllProducts = () => product.map((product, index) =>
-    <ItemProducts
-      key={index}
-      product={product} />);
+    <Col>
+      <ItemProducts
+        key={index}
+        product={product} />
+    </Col>);
 
   const FilterProduct = () =>
     product.map((product, index) => {
-      console.log(product);
       if (product.brand === filter.value) {
-        console.log(product);
         return product;
       }
       return (
-        <ItemProducts
-          key={index}
-          product={product} />
+        <>
+          <ItemProducts
+            key={index}
+            product={product} />
+        </>
       );
     }
     );
@@ -62,7 +64,9 @@ const Products = () => {
           product.length > 0
             ? filter.brand !== null
               ? <FilterProduct />
-              : <AllProducts />
+              : <Row xs={2} md={3} className="g-4">
+                <AllProducts />
+              </Row>
             : "No hay productos"
         }
       </Row>
