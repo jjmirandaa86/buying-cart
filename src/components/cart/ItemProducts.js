@@ -13,7 +13,7 @@ const ItemProducts = ({ product }) => {
   const { addOneProductToCart } = useContext(ShoppingCartContext);
 
   return (
-    <>
+    <Container>
       <Card
         style={{ width: '10rem', padding: '0.5rem' }}
         bg={theme.toLowerCase()}
@@ -34,7 +34,7 @@ const ItemProducts = ({ product }) => {
             Agregar</Button>
         </Card.Body>
       </Card>
-    </>
+    </Container>
   );
 };
 
